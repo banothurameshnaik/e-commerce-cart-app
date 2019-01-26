@@ -9,7 +9,7 @@ class Counters extends Component {
             <React.Fragment>
 
                 <div className="btn btn-sm btn-info m-4" onClick={this.props.onReset} >Reset</div>
-                <div className="btn btn-sm btn-primary m-4" onClick={this.props.handleShop} >Shop</div>
+                <div className="btn btn-sm btn-primary m-4" onClick={this.props.onShop} >Shop</div>
                 
                 {this.props.counters.map(counter => 
                     <Counter 
