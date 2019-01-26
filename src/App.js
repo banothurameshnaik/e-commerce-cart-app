@@ -18,6 +18,7 @@ class App extends Component {
 	}
 
 	constructor(props) {
+		super(props);
 		// Place to set initial property of state attributes
 		console.log("App - Constructor", props);
 	}
