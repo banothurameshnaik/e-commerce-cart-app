@@ -3,6 +3,7 @@ import './App.css';
 import NavBar  from "./components/navbar";
 import Counters from "./components/counters";
 import Instuctions from "./components/instructions";
+import Footer from './components/footer';
 
 class App extends Component {
 
@@ -12,6 +13,7 @@ class App extends Component {
 			{ id : 2, value: 1, productName: "B"},
 			{ id : 3, value: 0, productName: "C"},
 			{ id : 4, value: 3, productName: "D"},
+			{ id : 5, value: 0, productName: "E"},
 		]
 	}
 
@@ -73,6 +75,7 @@ class App extends Component {
 						<Instuctions />
 					</div>
 				</main>
+				<Footer />
 			</React.Fragment>
 		);
 	}
