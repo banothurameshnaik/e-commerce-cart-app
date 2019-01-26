@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
+    componentDidUpdate(prevPops, prevState) {
+        // Component is updated
+        console.log('Prev Pops', prevPops);
+        
+        // We can update the component by comparing prev pops and states and get new data through ajax calls
+    }
+
+    componentWillMount() {
+        // This method will be called before component is going to delete
+
+        // Ajax calls to remove list etc
+    }
+
     render() {
 
         return ( 

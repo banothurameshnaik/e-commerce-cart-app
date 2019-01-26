@@ -17,6 +17,15 @@ class App extends Component {
 		]
 	}
 
+	constructor(props) {
+		// Place to set initial property of state attributes
+		console.log("App - Constructor", props);
+	}
+
+	componentDidMount(props) {
+		// Place to do ajax calls and update the state
+	}
+
 	handleIncrement = (counter) => {
 		const counters = [...this.state.counters];
 		let index = counters.indexOf(counter);
