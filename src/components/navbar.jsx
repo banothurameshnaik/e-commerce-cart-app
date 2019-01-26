@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 // Statless Functional Components
-const NavBar = (props) => {
+const NavBar = ( {totalCartsCount} ) => {
     return ( 
         // <!-- As a heading -->
         <React.Fragment>
@@ -10,7 +10,7 @@ const NavBar = (props) => {
                 <span className="navbar-brand mb-0 h1">Simple E-Commerce Application</span>
                 <a className="navbar-brand" href="#">Cart &nbsp;
                     <span className="badge badge-pill badge-secondary">
-                        {props.totalCartsCount}
+                        {totalCartsCount}
                     </span>
                 </a>
             </nav>

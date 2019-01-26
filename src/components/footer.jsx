@@ -7,6 +7,7 @@ const Footer = () => {
 				<div className="container">
 					<p className="navbar-text pull-left">© 2019 - Site Built By <a href="https://github.com/banothurameshnaik">Mr. Ramesh Naik Banothu</a></p>
 				</div>
+				
 			</div>
 		</React.Fragment>
 	 );
