@@ -1,7 +1,7 @@
 
 This project is an simple e-commerence cart application.
 
-![Simple E-Commerce Cart Application Using React](src/SimpleReactApplication.png?raw=1)
+![Simple E-Commerce Cart Application Using React](public/SimpleReactApplication.png?raw=1)
 
 ## Clone The Project
 
