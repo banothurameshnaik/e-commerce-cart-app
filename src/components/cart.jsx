@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
 class Cart extends Component {
-    state = {  }
     render() { 
-        return ( <h1>Cart</h1> );
+        return ( <h1>You total items count {this.props.totalCartsCount}</h1> );
     }
 }
  

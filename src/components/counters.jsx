@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 
 import Counter from './counter';
 
@@ -9,8 +10,9 @@ class Counters extends Component {
             <React.Fragment>
 
                 <div className="btn btn-sm btn-info m-4" onClick={this.props.onReset} >Reset</div>
-                <div className="btn btn-sm btn-primary m-4" onClick={this.props.onShop} >Shop</div>
-                
+                <NavLink to="/cart">
+                    <div className="btn btn-sm btn-primary m-4">Shop</div>
+                </NavLink>
                 {this.props.counters.map(counter => 
                     <Counter 
                         key={counter.id} 

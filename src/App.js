@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 import NavBar  from "./components/navbar";
 import Home from './components/home';
 import Footer from './components/footer';
+import Cart from './components/cart';
+import ErrorPage from './components/errorPage';
 
+const TITLE = "Simple E-Commerce Application";
 class App extends Component {
 
 	state = {
@@ -18,11 +23,46 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		// Place to set initial property of state attributes
-		console.log("App - Constructor", props);
+		// console.log("App - Constructor", props);
+	}
+
+	render() {
+		return (
+			<BrowserRouter>
+				<React.Fragment>
+					<NavBar totalCartsCount={this.getTotalCartsCount()} />
+					<Switch>
+						<Route  path="/" exact 
+							render={ (props) => 
+									<Home
+										{...props}
+										counters={this.state.counters}
+										onDelete={this.handleDelete}
+										onIncrement={this.handleIncrement}
+										onDecrement={this.handleDecrement}
+										onReset={this.handleReset}
+									/> 
+							}
+						/>
+						<Route path="/cart" exact
+							render={(props) => <Cart {...props} totalCartsCount={this.getTotalCartsCount()} />}
+						/>
+						<Route component={ErrorPage} />
+					</Switch>
+					<Footer />
+				</React.Fragment>
+			</BrowserRouter>
+		);
+	}
+
+	getTotalCartsCount() {
+		return this.state.counters.filter(c => c.value > 0).length;
 	}
 
 	componentDidMount(props) {
 		// Place to do ajax calls and update the state
+		document.title = TITLE;
+		console.log(props);
 	}
 
 	handleIncrement = (counter) => {
@@ -56,22 +96,6 @@ class App extends Component {
 				return c;
 		});
 		this.setState({counters});
-	}
-
-	render() {
-		return (
-			<React.Fragment>
-				<NavBar totalCartsCount={this.state.counters.filter(c => c.value > 0).length} />
-				<Home 
-					counters={this.state.counters}
-					onDelete={this.handleDelete}
-					onIncrement={this.handleIncrement}
-					onDecrement={this.handleDecrement}
-					onReset={this.handleReset}
-				/>
-				<Footer />
-			</React.Fragment>
-		);
 	}
 }
 
