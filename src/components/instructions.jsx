@@ -8,7 +8,7 @@ const Instuctions = () => {
                 <ul>
                     <li>Maximum of three items can be added into list from each product.</li>
                     <li>You can delete the product from shopping cart also</li>
-                    <li>Currently ayment is offline only! Please pay through cash.</li>
+                    <li>Currently payment is offline only! Please pay through cash.</li>
                 </ul>
             </div>
         </div>
