@@ -58,24 +58,17 @@ class App extends Component {
 		this.setState({counters});
 	}
 
-	handleShop = () => {
-		alert("Shoping component is under construction!");
-	}
 	render() {
 		return (
 			<React.Fragment>
 				<NavBar totalCartsCount={this.state.counters.filter(c => c.value > 0).length} />
-				<main className="container">
-					{/* Main Page Display Here */}
-					<Home 
-						counters={this.state.counters}
-                        onDelete={this.handleDelete}
-                        onIncrement={this.handleIncrement}
-                        onDecrement={this.handleDecrement}
-                        onReset={this.handleReset}
-                        onShop={this.handleShop}
-					/>
-				</main>
+				<Home 
+					counters={this.state.counters}
+					onDelete={this.handleDelete}
+					onIncrement={this.handleIncrement}
+					onDecrement={this.handleDecrement}
+					onReset={this.handleReset}
+				/>
 				<Footer />
 			</React.Fragment>
 		);
