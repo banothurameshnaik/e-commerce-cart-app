@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavBar  from "./components/navbar";
-import Counters from "./components/counters";
-import Instuctions from "./components/instructions";
+import Home from './components/home';
 import Footer from './components/footer';
 
 class App extends Component {
@@ -67,22 +66,15 @@ class App extends Component {
 			<React.Fragment>
 				<NavBar totalCartsCount={this.state.counters.filter(c => c.value > 0).length} />
 				<main className="container">
-					{/* Row */}
-					<div className="row">
-						{/* Shoping Car */}
-						<div className="col-md-6">
-							<Counters 
-								counters={this.state.counters}
-								onDelete={this.handleDelete}
-								onIncrement={this.handleIncrement}
-								onDecrement={this.handleDecrement}
-								onReset={this.handleReset}
-								onShop={this.handleShop}
-							/>
-						</div>
-						{/* Instructions */}
-						<Instuctions />
-					</div>
+					{/* Main Page Display Here */}
+					<Home 
+						counters={this.state.counters}
+                        onDelete={this.handleDelete}
+                        onIncrement={this.handleIncrement}
+                        onDecrement={this.handleDecrement}
+                        onReset={this.handleReset}
+                        onShop={this.handleShop}
+					/>
 				</main>
 				<Footer />
 			</React.Fragment>
