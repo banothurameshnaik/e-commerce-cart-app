@@ -3,13 +3,29 @@ This project is an simple e-commerence cart application.
 
 ![Simple E-Commerce Cart Application Using React](public/SimpleReactApplication.png?raw=1)
 
+# Getting Start
+
 ## Clone The Project
 
-git clone [https://github.com/banothurameshnaik/e-commerce-cart-app](e-commerce-cart-app) .
+`git clone https://github.com/banothurameshnaik/e-commerce-cart-app e-commerce-cart-app`
 
 ## Move to Project
 
-cd `e-commerce-cart-app`
+`cd e-commerce-cart-app`
+
+## Install Packages Required
+
+`npm install`
+
+## Run the Project
+
+`npm start`
+
+Thats it, you are done.
+
+Runs the app in the development mode.<br>
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Available Scripts
 

@@ -12,18 +12,12 @@ class App extends Component {
 
 	state = {
 		counters : [
-			{ id : 1, value: 0, productName: "A"},
-			{ id : 2, value: 1, productName: "B"},
-			{ id : 3, value: 0, productName: "C"},
-			{ id : 4, value: 3, productName: "D"},
-			{ id : 5, value: 0, productName: "E"},
+			{ id : 1, value: 0, productName: "A", amount: 10},
+			{ id : 2, value: 1, productName: "B", amount: 20},
+			{ id : 3, value: 0, productName: "C", amount: 30},
+			{ id : 4, value: 3, productName: "D", amount:3},
+			{ id : 5, value: 0, productName: "E", amount:6},
 		]
-	}
-
-	constructor(props) {
-		super(props);
-		// Place to set initial property of state attributes
-		// console.log("App - Constructor", props);
 	}
 
 	render() {
@@ -45,7 +39,12 @@ class App extends Component {
 							}
 						/>
 						<Route path="/cart" exact
-							render={(props) => <Cart {...props} totalCartsCount={this.getTotalCartsCount()} />}
+							render={(props) => <Cart {...props} 
+							counters={this.state.counters}
+							totalCartsCount={this.getTotalCartsCount()}
+							getTotalCartsAmount={this.getTotalCartsAmount()}
+							getTotalItemsCount={this.getTotalItemsCount()}
+							/>}
 						/>
 						<Route component={ErrorPage} />
 					</Switch>
@@ -59,10 +58,26 @@ class App extends Component {
 		return this.state.counters.filter(c => c.value > 0).length;
 	}
 
+	getTotalItemsCount() {
+		let totalItemsCount = 0;
+		this.state.counters.forEach((counter) => {
+			totalItemsCount += counter.value;
+		});
+		return totalItemsCount;
+	}
+
+	getTotalCartsAmount() {
+		let totalCartsAmount = 0;
+		this.state.counters.forEach((counter) => {
+			totalCartsAmount += (counter.value * counter.amount);
+		});
+		return totalCartsAmount;
+	}
+
 	componentDidMount(props) {
 		// Place to do ajax calls and update the state
 		document.title = TITLE;
-		console.log(props);
+		// console.log(props);
 	}
 
 	handleIncrement = (counter) => {
