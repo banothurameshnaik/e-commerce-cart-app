@@ -32,7 +32,7 @@ const Footer = () => {
 						<div className="col-sm-4"></div>
 						<div className="col-sm-6">
 							<div className="footer-copyright">
-								<p>©  2019 - Site Built By <a href="https://github.com/banothurameshnaik" target="_blank">Mr. Ramesh Naik Banothu</a> </p>
+								<p>©  2019 - Site Built By <a rel="noopener noreferrer" href="https://github.com/banothurameshnaik" target="_blank">Mr. Ramesh Naik Banothu</a> </p>
 							</div>
 						</div>
 						<div className="col-sm-2"></div>
